@@ -12,4 +12,5 @@ You need to add geckodriver.exe(Windows) or gecko(Linux) to your path for seleni
 # For Linux
 
 > chmod +x geckodriver
+
 > export PATH=$PATH:/path-to-extracted-file/geckodriver
