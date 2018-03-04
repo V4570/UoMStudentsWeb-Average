@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from bs4 import BeautifulSoup as bs
 import argparse
 import sys
