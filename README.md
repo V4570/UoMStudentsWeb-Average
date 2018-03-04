@@ -13,7 +13,7 @@ You need to add geckodriver.exe(Windows) or gecko(Linux) to your path for seleni
 
 > chmod +x geckodriver
 
-> export PATH=$PATH:/path-to-extracted-file/geckodriver
+> export PATH=$PATH:/path-to-geckdriver/ , e.g. export PATH=$PATH:/home/v4570/Documents/Python/UoMStudensWeb-Average
 
 # Usage
 You have to add your login credentials in the config.yaml file e.g. username : 'it15123' password : '123abc' and then run the script with python, preferably python 3.
