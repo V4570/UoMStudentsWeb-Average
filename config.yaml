@@ -1,0 +1,4 @@
+username: ""
+password: ""
+login_url: "https://services.uom.gr/unistudent/login.asp"
+grades_url: "https://services.uom.gr/unistudent/stud_CResults.asp?lang=en-us&studPg=1&mnuid=mnu3"
