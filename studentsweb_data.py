@@ -89,4 +89,4 @@ if __name__ == '__main__':
     for course in normalized_grades:
         title = course['title']
         sys.stdout.write('{} : {}\n'.format(title, course['grade']))
-    sys.stdout.write('Average Grade: {}'.format(avg))
+    sys.stdout.write('Average Grade: {}\n'.format(avg))
