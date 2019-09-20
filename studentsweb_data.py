@@ -68,16 +68,32 @@ def calculate_average(normalized_grades):
             and course['grade'] >= 5
             and course['title'] in english_courses)
     
-    total_ects = sum(course['ects'] for course in normalized_grades
-        if course['grade'] != '-' and course['grade']>=5) - 10
     
+    total_ects = sum(course['ects'] for course in normalized_grades
+        if course['grade'] != '-'
+            and course['grade']>=5
+            and course['title'] not in english_courses
+            and course['title'] != 'ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ')
+    total_ects += 5
+
     total_grades = sum(course['grade'] * course['ects'] for course in normalized_grades
         if course['grade'] != '-'
             and course['grade']>=5
-            and course['title'] not in english_courses)
+            and course['title'] not in english_courses
+            and course['title'] != 'ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ')
     total_grades += max_english
     
-    avg = round(total_grades/total_ects, 2)
+    thesis_grade = 0
+    for course in normalized_grades:
+        if course['grade'] != '-' and course['title'] == 'ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ':
+            thesis_grade = course['grade'] * course['ects']
+    
+    
+    if thesis_grade != 0:
+        avg = round((total_grades+thesis_grade)/(total_ects + 15), 2)
+    else:
+        avg = round(total_grades/total_ects, 2)
+    
     return avg
 
 
